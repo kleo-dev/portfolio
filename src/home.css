@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+h2 {
+    font-family: 'Roboto Mono';
+    color: white;
+    margin-left: 20%;
+    top: -100%;
+    position: relative;
+}
+
+@media (orientation: landscape) {
+    .home {
+    position: relative;
+    margin-top: -10%;
+    margin-left: 10%;
+    width: 45%;
+}
+}
+@media (orientation: portrait) {
+    .home {
+    position: relative;
+    margin-top: 10%;
+    /* margin-left: 5%; */
+    width: 90%;
+}
+}
+
+p {
+    font-family: 'Roboto Mono';
+    color: white;
+    margin-left: 20%;
+    top: -100%;
+    position: relative;
+}
+
+a {
+	color: #f5304c;
+    font-family: 'Roboto Mono';
+    text-decoration: none;
+}
