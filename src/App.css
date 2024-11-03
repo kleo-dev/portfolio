@@ -1,3 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+h2, p {
+    font-family: 'Roboto Mono';
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+body {
+  	background-color: #101010;
+ 	margin: 0;
+	padding: 0;
+}
+@media (orientation: landscape) {
+    .home {
+    position: relative;
+    margin-top: -10%;
+    margin-left: 10%;
+    width: 45%;
+	@-moz-document url-prefix() {
+    	margin-top: 10%;
+	}
+}
+}
+@media (orientation: portrait) {
+    .home {
+    position: relative;
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 90%;
+}
+}
+
+a {
+	color: #f5304c;
+    font-family: 'Roboto Mono';
+    text-decoration: none;
+}
+
 @media (orientation: landscape) {
 	.logo {
   width: 280px;
@@ -9,6 +52,7 @@
   /* outline-offset: 30px; */
 }
 }
+
 @media (orientation: portrait) {
 	.logo {
   width: 120px;
@@ -21,11 +65,67 @@
 }
 }
 
-body {
-  background-color: #101010;
-  margin: 0;
-	padding: 0;
+.tech {
+	color: #f5304c;
+	width: 70px;
+	height: 70px;
+	margin-right: 5px;
 }
+
+@media (orientation: landscape) {
+	.tech-stack {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 86%;
+	}
+	}
+
+	@media (orientation: portrait) {
+.tech-stack {
+	position: absolute;
+    left: 53%;
+    transform: translateX(-50%);
+	top: 86%;
+}
+}
+
+@media (orientation: landscape) {
+	.tech-stack {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 86%;
+	}
+}
+
+/*BLOBS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------
+*/
 
 .shape-blob {
 	background:#f5304c;
@@ -81,59 +181,4 @@ body {
     0%,
   500% { transform: none; }
    50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
-}
-
-h1 {
-	font-family: 'Playfair Display', serif;
-	font-size: 5em;
-	letter-spacing: 2px;
-	font-weight: 900;
-	color: white;
-	line-height: .9em;
-	position: relative;
-	z-index: 4;
-	text-shadow: 2px 3px 15px rgba(0,0,0,.15);
-}
-
-.tech {
-	color: #f5304c;
-	width: 70px;
-	height: 70px;
-	margin-right: 5px;
-}
-
-@media (orientation: portrait) {
-.tech-stack {
-	position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-	top: 86%;
-}
-}
-
-@media (orientation: landscape) {
-	.tech-stack {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		top: 86%;
-	}
-	}
-
-	@media (orientation: portrait) {
-.tech-stack {
-	position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-	top: 86%;
-}
-}
-
-@media (orientation: landscape) {
-	.tech-stack {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		top: 86%;
-	}
 }
