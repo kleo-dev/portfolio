@@ -1,6 +1,13 @@
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGolang, faJs, faPython, faRust } from '@fortawesome/free-brands-svg-icons'
+import Typewriter from 'typewriter-effect';
+import GraphemeSplitter from "grapheme-splitter";
+
+const stringSplitter = string => {
+  const splitter = new GraphemeSplitter();
+  return splitter.splitGraphemes(string);
+};
 
 function App() {
   return ( 
@@ -10,7 +17,29 @@ function App() {
       <div className="shape-blob one"></div>
       <div className="shape-blob two"></div>
       <div className='home'>
-        <h2>Hey, I'm Leo 👋🏻</h2>
+
+        <h2><Typewriter
+          options={{
+            stringSplitter,
+            loop: true
+          }}
+          onInit={(typewriter) => {
+            typewriter.typeString("Hey, I'm Leo 👋🏻").start()
+            .pauseFor(2400)
+            .deleteAll()
+            .typeString("A software developer")
+            .pauseFor(2400)
+            .changeDeleteSpeed(10)
+            .deleteChars(18)
+            .typeString("Cybersecurity engineer")
+            .pauseFor(2400)
+            .deleteChars(22)
+            .typeString("Computer architect")
+            .pauseFor(2400);
+          } }
+          />
+        </h2>
+
         <p>I'm a developer and researcher from Tirane, Albania. I'm the leader of <a href="https://github.com/orus-dev">Orus</a>. I've been coding for 5 years and i'm in love with it. I work on free and open source projects. I'm also willing to work on paid projects with a payment. You can find me on <a href="https://instagram.com/kleo.dev">Instagram</a>, <a href="https://github.com/kleo-dev">GitHub</a>, <a href="https://www.youtube.com/@0xkleo">YouTube</a>, Or if you perfer to contact me via Discord: leocodes</p>
       </div>
 
