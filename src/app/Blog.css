@@ -4,8 +4,8 @@
 
 p {
   font-family: 'Roboto Mono';
-    color: white;
-    text-align: left;
+  color: white;
+  text-align: left;
 }
 
 body {
@@ -52,12 +52,6 @@ h1 {
   font-size: 15px;
 }
 
-.markdown {
-  font-family: 'Roboto Mono';
-  margin-top: 30px;
-  text-align: left;
-}
-
 a {
 	color: #f5304c;
   font-family: 'Roboto Mono';
@@ -90,15 +84,40 @@ a {
 
 .blog_container {
   margin: 60px auto;
-  width: 600px;
+  width: 730px;
   text-align: left;
   overflow-wrap: break-word;
   user-select: text;
   overflow: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 730px) {
   .blog_container {
     width: 100%;
   }
+}
+
+
+/*
+
+MARKDOWN
+
+*/
+
+.markdown {
+  font-family: 'Roboto Mono';
+  margin-top: 30px;
+  text-align: left;
+}
+
+.markdown img {
+  max-width: 100%;
+}
+
+ol li::marker {
+  color: #f5304c;
+}
+
+ul li::marker {
+  color: #f5304c;
 }

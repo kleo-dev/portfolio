@@ -42,7 +42,7 @@ export default function LoadingBlog(props: any) {
             {Array.from({ length: numComponents }, (_, index) => (
                 <ContentLoader
                     speed={2}
-                    viewBox="0 0 340 50"
+                    viewBox="0 0 290 50"
                     backgroundColor="#3b3b3b"
                     foregroundColor="#f5304c"
                     key={index}

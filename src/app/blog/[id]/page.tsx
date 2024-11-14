@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../Blog.css';
 import MarkdownRenderer from './MarkdownRenderer';
-import LoadingBlog, { LoadingBlogRead } from '../Loading';
+import { LoadingBlogRead } from '../Loading';
 
 export default function Blog({ params }: { params: Promise<{ id: string }> }) {
   const [blog, setBlog] = useState({ title: '', date: '', markdown: '' });
@@ -44,7 +44,12 @@ export default function Blog({ params }: { params: Promise<{ id: string }> }) {
   }
 
   if (error) {
-    return <div className="error">Error loading blog: {error}</div>; // Show error if there is one
+    return (
+      <main>
+        <a href="/blog"><h1 className='name'>Leo's blog</h1></a>
+        <div>Error: {error}</div>;
+      </main>
+    )
   }
 
   return (
@@ -53,7 +58,7 @@ export default function Blog({ params }: { params: Promise<{ id: string }> }) {
       <div className='blog_container'>
         <h2 className='blog_title'>{blog.title}</h2>
         <p className='date'>{date}</p>
-        <div className='markdown'><MarkdownRenderer>{blog.markdown}</MarkdownRenderer></div>
+        <div className='markdown'><MarkdownRenderer>{blog.markdown.replaceAll('\n-\n', '\n<br/>\n')}</MarkdownRenderer></div>
       </div>
     </main>
   );
