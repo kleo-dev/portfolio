@@ -9,7 +9,10 @@ interface Blog {
     description: string,
 };
 
-export async function queryDatabase(notion: Client, databaseId: string): Promise<[Array<any>, any]> {
+type QueryResponse = { cursor: string | null, hasMore: boolean, items: Blog[] };
+type Error = { msg: string };
+
+export async function getBlogs(notion: Client, databaseId: string, cursor: string | undefined, pageSize: number): Promise<[number, QueryResponse | Error]> {
     try {
         const response = await notion.databases.query({
             database_id: databaseId,
@@ -18,20 +21,14 @@ export async function queryDatabase(notion: Client, databaseId: string): Promise
                 status: {
                     equals: "Posted"
                 }
-            }
+            },
+            start_cursor: cursor,
+            page_size: pageSize,
         });
-        return [response.results, null];
-    } catch (error: any) {
-        return [[], error];
+        return [200, {cursor: response.next_cursor, hasMore: response.has_more, items: response.results.map(convertBlog)}];
+    } catch (err: any) {
+        return [400, {msg: String(err)}];
     }
-}
-
-export default async function getBlogs(notion: Client, databaseId: string): Promise<[number, Blog[] | {msg: string}]> {
-    const [pages, err] = await queryDatabase(notion, databaseId);
-    if (err === null) {
-        return [200, pages.map(convertBlog)];
-    }
-    return [500, {msg: String(err)}];
 }
 
 function convertBlog(page: any): Blog {
@@ -48,7 +45,7 @@ interface FullBlog extends Blog {
     markdown: string,
 };
 
-export async function getBlog(notion: Client, n2m: NotionToMarkdown, pageId: string): Promise<[number, FullBlog | {msg: string}]> {
+export async function getBlog(notion: Client, n2m: NotionToMarkdown, pageId: string): Promise<[number, FullBlog | Error]> {
     try {
         const page: any = await notion.pages.retrieve({ page_id: pageId })
         if (page.properties.Status.status.name !== 'Posted')
@@ -62,7 +59,7 @@ export async function getBlog(notion: Client, n2m: NotionToMarkdown, pageId: str
                 description: blog.description,
                 tags: blog.tags,
                 date: blog.date,
-                markdown: n2m.toMarkdownString(mdBlocks).parent,
+                markdown: n2m.toMarkdownString(mdBlocks).parent || '',
             }];
         } catch (err: any) {
             return [500, {msg: String(err)}];
