@@ -121,3 +121,18 @@ ol li::marker {
 ul li::marker {
   color: #f5304c;
 }
+
+.markdown code {
+  color: #f5304c;
+}
+
+.markdown h1, h2 {
+  color: #f5304c;
+}
+
+.markdown img {
+  padding: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
