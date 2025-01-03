@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Leo's portfolio",
-  description: "Leo's portfolio"
+  title: "Leo's Portfolio",
+  description: "",
 };
 
 export default function RootLayout({
@@ -13,13 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <title>Leo's portfolio</title>
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      <body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
         {children}
       </body>
     </html>
