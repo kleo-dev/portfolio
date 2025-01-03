@@ -8,6 +8,9 @@ const Navbar = () => {
           <a href="/" className="hover:text-red transition-colors duration-300">
             Home
           </a>
+          <a href="/about" className="hover:text-red transition-colors duration-300">
+            About
+          </a>
           <a href="/contact" className="hover:text-red transition-colors duration-300">
             Contact
           </a>

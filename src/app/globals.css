@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Kodchasan Medium';
+  src: url('/fonts/Kodchasan-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/fonts/Kodchasan-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Kodchasan Semi Bold';
+  src: url('/fonts/Kodchasan-SemiBold.ttf');
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,7 +32,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kodchasan Semi Bold', sans-serif;
 }
 
 h1 {

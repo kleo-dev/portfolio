@@ -23,7 +23,7 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
         hover:shadow-md
         transition-shadow
         duration-300
-        bg-transparent
+        bg-transparent-ish
         backdrop-blur-xl
         `}
     >
@@ -41,7 +41,7 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
                 {name}
               </a>
             </h3>
-            <p className="text-xs sm:text-sm text-gray-400 line-clamp-2 mt-1">
+            <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 mt-1">
               {desc}
             </p>
           </div>
@@ -63,7 +63,7 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
                   >
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
-                  <span className="text-gray-400">{stars}</span>
+                  <span className="text-gray-300">{stars}</span>
                 </div>
                 <div className="flex items-center gap-1 text-xs sm:text-sm" data-state="closed">
                   <svg
@@ -84,7 +84,7 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
                     <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9" />
                     <path d="M12 12v3" />
                   </svg>
-                  <span className="text-gray-400">{forks}</span>
+                  <span className="text-gray-300">{forks}</span>
                 </div>
               </div>
               <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs bg-red-600/10 border-red-600" data-sentry-component="Badge" data-sentry-source-file="badge.tsx">

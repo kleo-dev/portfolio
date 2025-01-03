@@ -14,7 +14,7 @@ export default {
         red: '#f5304c',
         'red-400': '#fa5770',
         'red-600': '#eb2642',
-        'transparent-ish': '#0000000F'
+        'transparent-ish': '#0000006F'
       },
     },
   },
