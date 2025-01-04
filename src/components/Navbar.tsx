@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -9,7 +10,7 @@ export default function Navbar() {
     <nav className="py-4 flex">
       <div className="mx-auto flex">
         <div className="space-x-4 text-white block font-bold">
-          <a
+          <Link
             href="/"
             className={
               "hover:text-red transition-colors duration-300" +
@@ -17,8 +18,8 @@ export default function Navbar() {
             }
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/pricing"
             className={
               "hover:text-red transition-colors duration-300" +
@@ -26,8 +27,8 @@ export default function Navbar() {
             }
           >
             Pricing
-          </a>
-          <a
+          </Link>
+          <Link
             href="/blog"
             className={
               "hover:text-red transition-colors duration-300" +
@@ -35,7 +36,7 @@ export default function Navbar() {
             }
           >
             Blog
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
