@@ -1,4 +1,4 @@
-import './Background.css';
+import "./Background.css";
 
 const Background = () => {
   return (
@@ -32,7 +32,7 @@ const Background = () => {
       <span></span>
       <span></span>
       <span></span>
-      </div>
+    </div>
   );
 };
 

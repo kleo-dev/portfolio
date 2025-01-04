@@ -1,14 +1,21 @@
 type PinnedRepo = {
-  author: string,
-  name: string,
-  description: string,
-  language: string,
-  stars: number,
-  forks: number,
-  href?: string,
+  author: string;
+  name: string;
+  description: string;
+  language: string;
+  stars: number;
+  forks: number;
+  href?: string;
 };
 
-export function Repo({name, description: desc, language: lang, stars, forks, href}: PinnedRepo) {
+export function Repo({
+  name,
+  description: desc,
+  language: lang,
+  stars,
+  forks,
+  href,
+}: PinnedRepo) {
   return (
     <div
       className={`
@@ -37,7 +44,7 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
                 target="_blank"
                 rel="noreferrer"
                 className="hover:underline"
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: "pointer" }}
               >
                 {name}
               </a>
@@ -49,7 +56,10 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
           <div className="p-6 pt-0 mt-auto">
             <div className="flex flex-wrap justify-between items-center gap-2">
               <div className="flex items-center gap-2 sm:gap-4">
-                <div className="flex items-center gap-1 text-xs sm:text-sm" data-state="closed">
+                <div
+                  className="flex items-center gap-1 text-xs sm:text-sm"
+                  data-state="closed"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -66,7 +76,10 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
                   </svg>
                   <span className="text-gray-300">{stars}</span>
                 </div>
-                <div className="flex items-center gap-1 text-xs sm:text-sm" data-state="closed">
+                <div
+                  className="flex items-center gap-1 text-xs sm:text-sm"
+                  data-state="closed"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -88,7 +101,11 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
                   <span className="text-gray-300">{forks}</span>
                 </div>
               </div>
-              <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs bg-red-600/10 border-red-600" data-sentry-component="Badge" data-sentry-source-file="badge.tsx">
+              <div
+                className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs bg-red-600/10 border-red-600"
+                data-sentry-component="Badge"
+                data-sentry-source-file="badge.tsx"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -112,11 +129,13 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default async function PinnedRepos() {
-  const pinned: PinnedRepo[] = await (await fetch('https://pinned.berrysauce.dev/get/kleo-dev')).json();
+  const pinned: PinnedRepo[] = await (
+    await fetch("https://pinned.berrysauce.dev/get/kleo-dev")
+  ).json();
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
@@ -129,8 +148,9 @@ export default async function PinnedRepos() {
           language={repo.language}
           stars={repo.stars}
           forks={repo.forks}
-          href={`https://github.com/${repo.author}/${repo.name}`}/>
+          href={`https://github.com/${repo.author}/${repo.name}`}
+        />
       ))}
     </div>
-  )
+  );
 }
