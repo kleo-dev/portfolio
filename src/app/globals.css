@@ -39,3 +39,12 @@ h1 {
   font-size: 30px;
   font-weight: bold;
 }
+
+.skill .tooltip {
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+.skill:hover .tooltip {
+  opacity: 1;
+}

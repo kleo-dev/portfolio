@@ -18,7 +18,8 @@ export function Repo({name, description: desc, language: lang, stars, forks, hre
         size-full
         overflow-hidden
         rounded-xl
-        h-full border
+        h-full
+        border
         border-red
         hover:shadow-md
         transition-shadow
