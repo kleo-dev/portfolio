@@ -1,5 +1,5 @@
 import Background from "@/components/Background";
-import { faCheck, faCode, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faCode, faDatabase, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Pricing() {
@@ -17,7 +17,7 @@ export default function Pricing() {
                             <ul className="pt-4 list-none space-y-2">
                                 <li className="flex items-center">
                                     <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} width={14} />
-                                    Up to 4 hours
+                                    Up to a day
                                 </li>
                                 <li className="flex items-center">
                                     <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} width={14} />
@@ -31,29 +31,9 @@ export default function Pricing() {
                         </div>
                         
                         <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
-                            <FontAwesomeIcon className="w-max mx-auto text-red-600" icon={faCode} width={35}/>
+                            <FontAwesomeIcon className="w-max mx-auto text-red-600" icon={faRocket} width={35}/>
                             <h1 className="w-max mx-auto text-red-400">Premium</h1>
-                            <h2 className="text-2xl w-max mx-auto text-red">$60</h2>
-                            <ul className="pt-4 list-none space-y-2">
-                                <li className="flex items-center">
-                                    <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} width={14} />
-                                    Up to a day
-                                </li>
-                                <li className="flex items-center">
-                                    <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} width={14} />
-                                    Simple to medium projects
-                                </li>
-                                <li className="flex items-center">
-                                    <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} width={14} />
-                                    Larger tasks (e.g., refractoring, bug hunting)
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
-                            <FontAwesomeIcon className="w-max mx-auto text-red-600" icon={faDatabase} width={35}/>
-                            <h1 className="w-max mx-auto text-red-400">Enterprise</h1>
-                            <h2 className="text-2xl w-max mx-auto text-red">$150</h2>
+                            <h2 className="text-2xl w-max mx-auto text-red">$50</h2>
                             <ul className="pt-4 list-none space-y-2">
                                 <li className="flex items-center">
                                     <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} width={14} />
