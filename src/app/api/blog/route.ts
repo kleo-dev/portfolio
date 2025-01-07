@@ -4,7 +4,7 @@ import { notion, databaseId, n2m } from "@/notion";
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const id = url.searchParams.get("id");
-  if (id !== null) {
+  if (id) {
     let [status, data] = await getBlog(notion, n2m, id);
     return Response.json(data, { status });
   } else {
