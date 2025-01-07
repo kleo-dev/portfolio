@@ -1,3 +1,5 @@
+import { stringify } from "querystring";
+
 type PinnedRepo = {
   author: string;
   name: string;
@@ -133,24 +135,30 @@ export function Repo({
 }
 
 export default async function PinnedRepos() {
-  const pinned: PinnedRepo[] = await (
-    await fetch("https://pinned.berrysauce.dev/get/kleo-dev")
-  ).json();
+  try {
+    const pinned: PinnedRepo[] = await (
+      await fetch("https://pinned.berrysauce.dev/get/kleo-dev")
+    ).json();
 
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
-      {pinned.map((repo, i) => (
-        <Repo
-          key={i}
-          author={repo.author}
-          name={repo.name}
-          description={repo.description}
-          language={repo.language}
-          stars={repo.stars}
-          forks={repo.forks}
-          href={`https://github.com/${repo.author}/${repo.name}`}
-        />
-      ))}
-    </div>
-  );
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
+        {pinned.map((repo, i) => (
+          <Repo
+            key={i}
+            author={repo.author}
+            name={repo.name}
+            description={repo.description}
+            language={repo.language}
+            stars={repo.stars}
+            forks={repo.forks}
+            href={`https://github.com/${repo.author}/${repo.name}`}
+          />
+        ))}
+      </div>
+    );
+  } catch (e: any) {
+    return (
+      <p>{e.toString()}</p>
+    );
+  }
 }

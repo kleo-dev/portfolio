@@ -1,4 +1,3 @@
-import Background from "@/components/Background";
 import PinnedRepos from "@/components/PinnedRepos";
 import Skill from "@/components/Skill";
 import {
@@ -16,7 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function App() {
   return (
     <div>
-      <Background />
       <div className="content-center w-full lg:mx-auto pt-16 lg:pt-0 relative z-20 pb-16 md:pb-0 animate-fadeIn">
         <div className="w-full max-w-screen-lg mx-auto">
           <div className="px-8 md:px-10 lg:px-15 xl:px-24">

@@ -1,15 +1,10 @@
-import Background from "@/components/Background";
-import {
-  faCheck,
-  faCode,
-  faRocket,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faCode, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Pricing() {
   return (
     <div>
-      <Background />
+      {/* <Background /> */}
       <div className="content-center w-full lg:mx-auto pt-16 lg:pt-0 relative z-20 pb-16 md:pb-0 animate-fadeIn">
         <div className="w-full max-w-screen-lg mx-auto px-4 md:px-10">
           <h1 className="pt-10 w-max mx-auto text-red-400">Choose a plan</h1>
