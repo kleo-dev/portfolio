@@ -1,4 +1,10 @@
-import { faCheck, faCode, faRocket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faCode,
+  faDatabase,
+  faRocket,
+  faWrench,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Pricing() {
@@ -11,9 +17,8 @@ export default function Pricing() {
           <div className="pt-10 h-full grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-8">
             <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
               <FontAwesomeIcon
-                className="w-max mx-auto text-red-600"
+                className="mx-auto text-red-600 w-6"
                 icon={faCode}
-                width={35}
               />
               <h1 className="w-max mx-auto text-red-400">Standard</h1>
               <h2 className="text-2xl w-max mx-auto text-red">$25</h2>
@@ -47,9 +52,8 @@ export default function Pricing() {
 
             <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
               <FontAwesomeIcon
-                className="w-max mx-auto text-red-600"
+                className="mx-auto text-red-600 w-6"
                 icon={faRocket}
-                width={35}
               />
               <h1 className="w-max mx-auto text-red-400">Premium</h1>
               <h2 className="text-2xl w-max mx-auto text-red">$50</h2>
@@ -85,6 +89,60 @@ export default function Pricing() {
                     width={14}
                   />
                   Documenting
+                </li>
+              </ul>
+            </div>
+
+            <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
+              <FontAwesomeIcon
+                className="mx-auto text-red-600  w-6"
+                icon={faDatabase}
+              />
+              <h1 className="w-max mx-auto text-red-400">Enterprise</h1>
+              <h2 className="text-2xl w-max mx-auto text-red">$200</h2>
+              <ul className="pt-4 list-none space-y-2">
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Up to a month
+                </li>
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Large, Complex projects
+                </li>
+              </ul>
+            </div>
+
+            <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
+              <FontAwesomeIcon
+                className="mx-auto text-red-600 w-6"
+                icon={faWrench}
+              />
+              <h1 className="w-max mx-auto text-red-400">Maintenance</h1>
+              <h2 className="text-2xl w-max mx-auto text-red">$40-150 / mo</h2>
+              <ul className="pt-4 list-none space-y-2">
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Weekly bug checks & fixes
+                </li>
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Cybersecurity pen testing
                 </li>
               </ul>
             </div>
