@@ -13,7 +13,7 @@ export default function Pricing() {
       {/* <Background /> */}
       <div className="content-center w-full lg:mx-auto pt-16 lg:pt-0 relative z-20 pb-16 md:pb-0 animate-fadeIn">
         <div className="w-full max-w-screen-lg mx-auto px-4 md:px-10">
-          <h1 className="pt-10 w-max mx-auto text-red-400">Choose a plan</h1>
+          <h1 className="pt-10 w-max mx-auto text-red-400">Pricing plans</h1>
           <div className="pt-10 h-full grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-8">
             <div className="h-full rounded-xl bg-transparent-ish border border-red p-9">
               <FontAwesomeIcon
@@ -29,7 +29,7 @@ export default function Pricing() {
                     icon={faCheck}
                     width={14}
                   />
-                  Up to a day
+                  24-48 hours
                 </li>
                 <li className="flex items-center">
                   <FontAwesomeIcon
@@ -117,6 +117,14 @@ export default function Pricing() {
                   />
                   Large, Complex projects
                 </li>
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Higher priority
+                </li>
               </ul>
             </div>
 
@@ -144,9 +152,28 @@ export default function Pricing() {
                   />
                   Cybersecurity pen testing
                 </li>
+
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Feature requests
+                </li>
+
+                <li className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-green-500 mr-2"
+                    icon={faCheck}
+                    width={14}
+                  />
+                  Performance Optimization
+                </li>
               </ul>
             </div>
           </div>
+          <p className="md:mx-auto md:w-max">NOTE: if the project requires more than a month there will be a extra payments</p>
         </div>
       </div>
     </div>
