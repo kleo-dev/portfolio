@@ -20,11 +20,10 @@ export default function App() {
           <div className="px-8 md:px-10 lg:px-15 xl:px-24">
             <h1 className="py-2 text-gray-300">Hey, I'm Leo 👋🏻</h1>
             <p className="font-semibold text-gray-300">
-              A passionate software engineer and freelancer from Tirane,
-              Albania, specializing in full-stack web development, desktop
-              applications, and TUI apps. I have a deep interest in low-level
-              programming, often building projects like CPU emulators from
-              scratch.
+              A 15 year old Software Engineer from Tirane, Albania, with 5 years
+              of experience, specializing in full-stack web development, desktop
+              applications, TUI apps, and hacking. I have a deep interest in
+              low-level programming.
             </p>
             <div className="pt-5 flex flex-row gap-5 w-max">
               <a href="https://github.com/kleo-dev/" target="blank_">
