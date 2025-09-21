@@ -17,7 +17,7 @@ export default function Background({
 
   // Particle configuration
   const config = {
-    particleCount: 80,
+    particleCount: 400,
     maxDistance: 120,
     particleSpeed: 0.5,
     particleSize: 2,
