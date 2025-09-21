@@ -1,4 +1,6 @@
-import { stringify } from "querystring";
+'use client';
+
+import { useEffect, useState } from "react";
 
 type PinnedRepo = {
   author: string;
@@ -33,8 +35,7 @@ export function Repo({
         hover:shadow-md
         transition-shadow
         duration-300
-        bg-transparent-ish
-        backdrop-blur-xl
+        backdrop-blur-[2px]
         `}
     >
       <div className="w-full">
@@ -103,7 +104,8 @@ export function Repo({
                   <span className="text-gray-300">{forks}</span>
                 </div>
               </div>
-              <div
+              {lang && (
+                <div
                 className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs bg-red-600/10 border-red-600"
                 data-sentry-component="Badge"
                 data-sentry-source-file="badge.tsx"
@@ -126,6 +128,7 @@ export function Repo({
                 </svg>
                 {lang}
               </div>
+              )}
             </div>
           </div>
         </div>
@@ -134,11 +137,21 @@ export function Repo({
   );
 }
 
-export default async function PinnedRepos() {
+export default function PinnedRepos() {
   try {
-    const pinned: PinnedRepo[] = await (
-      await fetch("https://pinned.berrysauce.dev/get/kleo-dev")
-    ).json();
+    const [pinned, setPinned] = useState<PinnedRepo[]>([]);
+
+    useEffect(() => {
+      fetch("https://pinned.berrysauce.dev/get/kleo-dev").then(r => {
+        r.json().then(p => {
+          setPinned(p);
+        }).catch(e => {
+          console.error(e)
+        })
+      }).catch(e => {
+        console.error(e)
+      })
+    });
 
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">

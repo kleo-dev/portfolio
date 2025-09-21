@@ -28,15 +28,6 @@ export default function Navbar() {
           >
             Pricing
           </Link>
-          <Link
-            href="/blog"
-            className={
-              "hover:text-red transition-colors duration-300" +
-              (pathname === "/blog" ? " text-red" : "")
-            }
-          >
-            Blog
-          </Link>
         </div>
       </div>
     </nav>
