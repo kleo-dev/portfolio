@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faJava } from "@fortawesome/free-brands-svg-icons/faJava";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GitHubCalendar from "react-github-calendar";
 
 export default function App() {
   return (
@@ -21,14 +22,14 @@ export default function App() {
           <div className="px-8 md:px-10 lg:px-15 xl:px-24">
             <h1 className="py-2 text-gray-300">Hey, I'm Klesti! 👋🏻</h1>
             <p className="font-semibold text-gray-300">
-              A 15 year old Software Engineer from Tirane, Albania, with 5 years
+              A 15 year old Software Engineer from Tirane, Albania, with 6 years
               of experience, specializing in full-stack web development, desktop
-              applications, TUI apps, and hacking. I have a deep interest in
+              applications, TUI apps, and hacking. I also have a deep interest in
               low-level programming.
             </p>
 
             {/* Socials and skill */}
-            <div className="pt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
               {/* socials */}
               <div className="pt-5 flex flex-row gap-5 w-max">
                 <a href="https://github.com/kleo-dev/" target="blank_">
@@ -70,9 +71,15 @@ export default function App() {
               </div>
             </div>
             
-            <h1 className="pt-5 text-red-400">Pinned Projects</h1>
+            <h1 className="text-red-400">Pinned Projects</h1>
             <section className="">
               <PinnedRepos />
+            </section>
+            <section className="mt-8">
+              <GitHubCalendar username="kleo-dev" theme={{
+                light: ["#1a000f", "#5c001d", "#9f0030", "#d10045", "#f5304c"],
+                dark: ["#1a000f", "#5c001d", "#9f0030", "#d10045", "#f5304c"],
+              }} />
             </section>
           </div>
         </div>
