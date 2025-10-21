@@ -22,8 +22,7 @@ export default function Skill({
 
       <FontAwesomeIcon
         icon={icon}
-        width={40}
-        className={`text-slate-300 ${classInsert} cursor-pointer`}
+        className={`text-gray-300 ${classInsert} size-[2.3rem]`}
       />
     </div>
   );

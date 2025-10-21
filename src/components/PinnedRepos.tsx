@@ -73,7 +73,7 @@ export function Repo({
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="lucide lucide-star text-yellow-500 h-3 w-3 sm:h-4 sm:w-4"
+                    className="lucide lucide-star text-gray-300 h-3 w-3 sm:h-4 sm:w-4"
                   >
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>

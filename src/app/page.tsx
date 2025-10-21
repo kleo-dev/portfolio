@@ -1,3 +1,5 @@
+"use client";
+
 import PinnedRepos from "@/components/PinnedRepos";
 import Skill from "@/components/Skill";
 import {
@@ -12,9 +14,22 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faJava } from "@fortawesome/free-brands-svg-icons/faJava";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 
 export default function App() {
+  const [contribs, setContribs] = useState<number>();
+
+  useEffect(() => {
+    const fetchContributions = async () => {
+      const res = await fetch("/api/contribs");
+      const data = await res.json();
+      console.log("Total contributions:", data.total);
+      setContribs(data.total || undefined);
+    };
+    fetchContributions();
+  }, []);
+
   return (
     <div>
       <div className="content-center w-full lg:mx-auto pt-5 relative z-20 pb-10 animate-fadeIn">
@@ -35,8 +50,7 @@ export default function App() {
                 <a href="https://github.com/kleo-dev/" target="blank_">
                   <FontAwesomeIcon
                     icon={faGithub}
-                    width={36}
-                    className="text-slate-300"
+                    className="text-slate-300 size-[2.3rem]"
                   />
                 </a>
                 <a
@@ -45,15 +59,16 @@ export default function App() {
                 >
                   <FontAwesomeIcon
                     icon={faLinkedin}
-                    width={36}
-                    className="text-slate-300"
+                    className="text-slate-300 size-[2.3rem]"
                   />
                 </a>
-                <a href="https://www.instagram.com/kleo.dev/" target="blank_">
+                <a
+                  href="https://www.instagram.com/selimaj.dev/"
+                  target="blank_"
+                >
                   <FontAwesomeIcon
                     icon={faInstagram}
-                    width={36}
-                    className="text-slate-300"
+                    className="text-slate-300 size-[2.3rem]"
                   />
                 </a>
               </div>
@@ -75,7 +90,10 @@ export default function App() {
             <section className="">
               <PinnedRepos />
             </section>
-            <section className="mt-8">
+            <h2 className="text-slate-300 mt-7">
+              {contribs || "Loading.."} contributions in the last year
+            </h2>
+            <section className="mt-4">
               <GitHubCalendar
                 username="kleo-dev"
                 theme={{
