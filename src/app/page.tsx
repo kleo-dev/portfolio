@@ -1,3 +1,5 @@
+"use client";
+
 import PinnedRepos from "@/components/PinnedRepos";
 import Skill from "@/components/Skill";
 import {
@@ -12,20 +14,33 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faJava } from "@fortawesome/free-brands-svg-icons/faJava";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 
 export default function App() {
+  const [contribs, setContribs] = useState<number>();
+
+  useEffect(() => {
+    const fetchContributions = async () => {
+      const res = await fetch("/api/contribs");
+      const data = await res.json();
+      console.log("Total contributions:", data.total);
+      setContribs(data.total || undefined);
+    };
+    fetchContributions();
+  }, []);
+
   return (
     <div>
-      <div className="content-center w-full lg:mx-auto pt-5 relative z-20 pb-10 animate-fadeIn">
+      <div className="content-center w-full lg:mx-auto pt-5 relative z-20 pb-5 animate-fadeIn">
         <div className="w-full max-w-screen-lg mx-auto">
           <div className="px-8 md:px-10 lg:px-15 xl:px-24">
             <h1 className="py-2 text-gray-300">Hey, I'm Klesti! 👋🏻</h1>
             <p className="font-semibold text-gray-300">
               A 15 year old Software Engineer from Tirane, Albania, with 6 years
               of experience, specializing in full-stack web development, desktop
-              applications, TUI apps, and hacking. I also have a deep interest in
-              low-level programming.
+              applications, TUI apps, and hacking. I also have a deep interest
+              in low-level programming.
             </p>
 
             {/* Socials and skill */}
@@ -35,8 +50,7 @@ export default function App() {
                 <a href="https://github.com/kleo-dev/" target="blank_">
                   <FontAwesomeIcon
                     icon={faGithub}
-                    width={36}
-                    className="text-red"
+                    className="text-slate-300 size-[2.3rem]"
                   />
                 </a>
                 <a
@@ -45,15 +59,16 @@ export default function App() {
                 >
                   <FontAwesomeIcon
                     icon={faLinkedin}
-                    width={36}
-                    className="text-red"
+                    className="text-slate-300 size-[2.3rem]"
                   />
                 </a>
-                <a href="https://www.instagram.com/kleo.dev/" target="blank_">
+                <a
+                  href="https://www.instagram.com/selimaj.dev/"
+                  target="blank_"
+                >
                   <FontAwesomeIcon
                     icon={faInstagram}
-                    width={36}
-                    className="text-red"
+                    className="text-slate-300 size-[2.3rem]"
                   />
                 </a>
               </div>
@@ -70,17 +85,42 @@ export default function App() {
                 </div>
               </div>
             </div>
-            
-            <h1 className="text-red-400">Pinned Projects</h1>
+
+            <h1 className="text-slate-300">Pinned Projects</h1>
             <section className="">
               <PinnedRepos />
             </section>
-            <section className="mt-8">
-              <GitHubCalendar username="kleo-dev" theme={{
-                light: ["#1a000f", "#5c001d", "#9f0030", "#d10045", "#f5304c"],
-                dark: ["#1a000f", "#5c001d", "#9f0030", "#d10045", "#f5304c"],
-              }} />
+            <h2 className="text-slate-300 mt-7">
+              {contribs || "Loading.."} contributions in the last year
+            </h2>
+            <section className="mt-4">
+              <GitHubCalendar
+                hideTotalCount
+                username="kleo-dev"
+                theme={{
+                  light: [
+                    "rgba(255, 255, 255, 0.1)",
+                    "rgba(255, 255, 255, 0.3)",
+                    "rgba(255, 255, 255, 0.5)",
+                    "rgba(255, 255, 255, 0.7)",
+                    "rgba(255, 255, 255, 1)",
+                  ],
+                  dark: [
+                    "rgba(255, 255, 255, 0.1)",
+                    "rgba(255, 255, 255, 0.3)",
+                    "rgba(255, 255, 255, 0.5)",
+                    "rgba(255, 255, 255, 0.7)",
+                    "rgba(255, 255, 255, 1)",
+                  ],
+                }}
+              />
             </section>
+            <footer className="mt-8 border-t pt-3">
+              If you see this i ❤️ you
+              <p className="text-slate-300 mx-auto w-max mt-2">
+                © 2025 Klesti. All rights reserved.
+              </p>
+            </footer>
           </div>
         </div>
       </div>

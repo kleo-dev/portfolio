@@ -17,9 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased bg-black">
         <Background>
-          <div className="relative h-screen overflow-y-scroll">
-            {children}
-          </div>
+          <div className="relative h-screen overflow-y-scroll">{children}</div>
         </Background>
       </body>
     </html>

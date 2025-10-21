@@ -13,8 +13,8 @@ export default function Navbar() {
           <Link
             href="/"
             className={
-              "hover:text-red transition-colors duration-300" +
-              (pathname === "/" ? " text-red" : "")
+              "hover:slate-200 transition-colors duration-300" +
+              (pathname === "/" ? " slate-200" : "")
             }
           >
             Home
@@ -22,8 +22,8 @@ export default function Navbar() {
           <Link
             href="/pricing"
             className={
-              "hover:text-red transition-colors duration-300" +
-              (pathname === "/pricing" ? " text-red" : "")
+              "hover:slate-200 transition-colors duration-300" +
+              (pathname === "/pricing" ? " slate-200" : "")
             }
           >
             Pricing
