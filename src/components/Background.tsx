@@ -7,9 +7,8 @@ export default function Background({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [pos, setPos] = useState({ x: 100, y: 100 });
+  const [pos, setPos] = useState({ x: 30, y: 100 });
   const [vel, setVel] = useState({ x: 1, y: 1 });
-  const dvdRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     let frame: number;
@@ -18,8 +17,8 @@ export default function Background({
     let vx = vel.x;
     let vy = vel.y;
 
-    const speed = 0.8;
-    const size = 120;
+    const speed = 0.5;
+    const size = 100;
 
     // helper for collision detection
     const detectCollision = (
@@ -68,13 +67,12 @@ export default function Background({
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-black">
       <img
-        ref={dvdRef}
         style={{
           transform: `translate(${pos.x}px, ${pos.y}px)`,
         }}
         src="/logo.png"
         alt="Logo"
-        className="size-24 rounded-full border-slate-400 border"
+        className="size-24 rounded-full border-slate-500 border"
       />
       <div className="relative z-10">{children}</div>
     </div>

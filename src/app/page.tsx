@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div>
-      <div className="content-center w-full lg:mx-auto pt-5 relative z-20 pb-10 animate-fadeIn">
+      <div className="content-center w-full lg:mx-auto pt-5 relative z-20 pb-5 animate-fadeIn">
         <div className="w-full max-w-screen-lg mx-auto">
           <div className="px-8 md:px-10 lg:px-15 xl:px-24">
             <h1 className="py-2 text-gray-300">Hey, I'm Klesti! 👋🏻</h1>
@@ -95,6 +95,7 @@ export default function App() {
             </h2>
             <section className="mt-4">
               <GitHubCalendar
+                hideTotalCount
                 username="kleo-dev"
                 theme={{
                   light: [
@@ -114,6 +115,12 @@ export default function App() {
                 }}
               />
             </section>
+            <footer className="mt-8 border-t pt-3">
+              If you see this i ❤️ you
+              <p className="text-slate-300 mx-auto w-max mt-2">
+                © 2025 Klesti. All rights reserved.
+              </p>
+            </footer>
           </div>
         </div>
       </div>
