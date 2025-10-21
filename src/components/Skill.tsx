@@ -17,13 +17,13 @@ export default function Skill({
                    bg-black text-white text-sm px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
       >
-        Skilled in {" "} {skill}
+        Skilled in {skill}
       </span>
 
       <FontAwesomeIcon
         icon={icon}
         width={40}
-        className={`text-red ${classInsert} cursor-pointer`}
+        className={`text-slate-300 ${classInsert} cursor-pointer`}
       />
     </div>
   );

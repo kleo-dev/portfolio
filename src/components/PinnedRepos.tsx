@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -31,7 +31,7 @@ export function Repo({
         rounded-xl
         h-full
         border
-        border-red
+        border-slate-300
         hover:shadow-md
         transition-shadow
         duration-300
@@ -41,7 +41,7 @@ export function Repo({
       <div className="w-full">
         <div className="rounded-xl border text-card-foreground shadow h-full bg-transparent border-none flex flex-col">
           <div className="flex flex-col space-y-1.5 p-6 flex-grow">
-            <h3 className="tracking-tight text-base sm:text-lg font-semibold text-red-400">
+            <h3 className="tracking-tight text-base sm:text-lg font-semibold text-slate-300">
               <a
                 href={href}
                 target="_blank"
@@ -106,28 +106,28 @@ export function Repo({
               </div>
               {lang && (
                 <div
-                className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs bg-red-600/10 border-red-600"
-                data-sentry-component="Badge"
-                data-sentry-source-file="badge.tsx"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-code-xml h-3 w-3 mr-1"
+                  className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-xs bg-slate-400/10 border-slate-400"
+                  data-sentry-component="Badge"
+                  data-sentry-source-file="badge.tsx"
                 >
-                  <path d="m18 16 4-4-4-4" />
-                  <path d="m6 8-4 4 4 4" />
-                  <path d="m14.5 4-5 16" />
-                </svg>
-                {lang}
-              </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-code-xml h-3 w-3 mr-1"
+                  >
+                    <path d="m18 16 4-4-4-4" />
+                    <path d="m6 8-4 4 4 4" />
+                    <path d="m14.5 4-5 16" />
+                  </svg>
+                  {lang}
+                </div>
               )}
             </div>
           </div>
@@ -142,15 +142,19 @@ export default function PinnedRepos() {
     const [pinned, setPinned] = useState<PinnedRepo[]>([]);
 
     useEffect(() => {
-      fetch("https://pinned.berrysauce.dev/get/kleo-dev").then(r => {
-        r.json().then(p => {
-          setPinned(p);
-        }).catch(e => {
-          console.error(e)
+      fetch("https://pinned.berrysauce.dev/get/kleo-dev")
+        .then((r) => {
+          r.json()
+            .then((p) => {
+              setPinned(p);
+            })
+            .catch((e) => {
+              console.error(e);
+            });
         })
-      }).catch(e => {
-        console.error(e)
-      })
+        .catch((e) => {
+          console.error(e);
+        });
     });
 
     return (
@@ -170,8 +174,6 @@ export default function PinnedRepos() {
       </div>
     );
   } catch (e: any) {
-    return (
-      <p>{e.toString()}</p>
-    );
+    return <p>{e.toString()}</p>;
   }
 }

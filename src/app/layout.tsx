@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-black">
-        <Background>
-          <div className="relative h-screen overflow-y-scroll">
+        {/* <Background> */}
+          {/* <div className="relative h-screen overflow-y-scroll"> */}
             {children}
-          </div>
-        </Background>
+          {/* </div> */}
+        {/* </Background> */}
       </body>
     </html>
   );
